@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Shubham Bakers</title>
+
+     <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='shubham-style.css')}}">
+
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+
+    <!-- MENU BAR -->
+    <nav id="nav-bar">     
+        <ul>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="/registration">Register</a></li>
+            <li><a href="/attendees">Attendees</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <table> 
+        <thead>
+            <tr>
+                <th>S No.</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for attendee in attendees %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{attendee.email}}</td>
+                    <td>{{attendee.firstname}}</td>
+                    <td>{{attendee.lastname}}</td>
+                </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+
+
+
+
+
+    
+
+     <!-- SCRIPTS -->
+     <!-- <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/aos.js"></script>
+     <script src="js/smoothscroll.js"></script> -->
+     <script src="js/custom.js"></script>
+
+</body>
+</html>
